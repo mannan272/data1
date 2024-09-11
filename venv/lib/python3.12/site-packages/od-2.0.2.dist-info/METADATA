@@ -1,0 +1,57 @@
+Metadata-Version: 2.1
+Name: od
+Version: 2.0.2
+Summary: Shorthand syntax for building OrderedDicts
+Home-page: https://github.com/epsy/od
+Author: Yann Kaiser
+Author-email: kaiser.yann@gmail.com
+License: MIT
+Keywords: OrderedDict,od,syntactic sugar
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.5
+Description-Content-Type: text/x-rst
+Provides-Extra: test
+Requires-Dist: repeated-test ; extra == 'test'
+
+od
+==
+
+.. image:: https://github.com/epsy/od/actions/workflows/ci.yml/badge.svg?branch=master
+   :target: https://github.com/epsy/od/actions/workflows/ci.yml
+
+.. image:: https://coveralls.io/repos/github/epsy/od/badge.svg?branch=master
+   :target: https://coveralls.io/github/epsy/od?branch=master
+
+
+The ``od`` package adds a shorthand syntax to create instances of `OrderedDict
+<https://docs.python.org/3/library/collections.html#collections.OrderedDict>`_
+::
+
+    >>> import od
+    >>>
+    >>> od["cat": "fish", "mouse": "cheese"]
+    OrderedDict([('cat', 'fish'), ('mouse', 'cheese')])
+    >>> od["mouse": "cheese", "cat": "fish"]
+    OrderedDict([('mouse', 'cheese'), ('cat', 'fish')])
+
+You can also use it like the regular constructor for ``OrderedDict``::
+
+    >>> od()
+    OrderedDict()
+    >>> an_iterable = [("cat", "fish"), ("mouse", "cheese")]
+    >>> od(an_iterable)
+    OrderedDict([('cat', 'fish'), ('mouse', 'cheese')])
+
+Install this package using `pip <https://pip.pypa.io/en/stable/installing/>`_::
+
+    $ pip install --user od
+
+
